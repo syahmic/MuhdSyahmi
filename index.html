@@ -1,0 +1,189 @@
+<html>
+<head><div style="text-align: center"><h1 style="color:maroon;font-family:times new roman">MY PERSONAL WEBSITE</h1>
+</body>
+</html>
+</style> 
+<head>
+<body background="techno.gif">
+     <hr color="black">
+     <marquee><h1 style="color:darkblue;font-family:lucida calligraphy">💎WELCOME TO MUHAMMAD SYAHMI PERSONAL WEBSITE💎</marquee>
+     <hr color="black">
+</hr>
+</head>
+
+<embed src="happy.mp3" hidden="true"></embed>
+<html>
+<head>
+<style>
+ul {
+  font-size: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 35px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ff00ff80;
+}
+</style>
+
+<ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About me</a></li>
+  <li><a href="myfamily.html">My family</a></li>
+  <li><a href="academic.html">Academic Background</a></li>
+  <li><a href="plan.html">My Dream</a></li>
+  <li><a href="hobby.html">My hobby</a></li>
+  <li><a href="business.html">My Business</a></li>
+  <li><a href="contactme.html">Contact Me</a></li>
+  
+</ul>
+</body>
+</html>
+</style> 
+
+<body align="center">
+<br>
+<h3>Please click me first</h3>
+<a href="alfatihah.mp3">Surah Al-Fatihah</a>
+<br>
+<br>
+<embed src="welcome.gif" autostart="true" width="100%" height="50%" vspace="0" hspace="0" align="center"></embed>
+<br>
+<br
+<html>
+<body>
+
+<canvas id="canvas" width="200" height="200"
+style="background-color:#333">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+</body>
+</html>
+<br>
+<br>
+<html>
+<head>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+</head>
+<body>
+
+<h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+
+</body>
+</html>
+<br>
+<br>
+<hr>
+<footer><center>
+<p>COPYRIGHT &copy; MUHD SYAHMI GHAZALI 2021. IMS456</p>
+</center></footer>
+
+</body>
+</html>
